@@ -1,0 +1,6 @@
+# ICMP Payloads
+# Format: standard, large, special bytes
+PingTestPayload  # Standard ICMP echo request
+FuzzingPacketICMP  # General packet for fuzzing
+\x00\x01\x02\x03\xFF\xFE  # Special byte sequence
+ICMPLargePayload_BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB  # Large ICMP payload for limits testing
