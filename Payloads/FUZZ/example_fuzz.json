@@ -1,0 +1,5 @@
+{
+    "username": "admin",
+    "password": "AAAAAAAAAAAAAAAAAAAAAAAAAA...<more_than_max_length>",
+    "email": "test@example.com\x00\x00\x00\x00"
+}
