@@ -1,0 +1,7 @@
+# UDP Payloads
+# Format: standard, malicious, long, etc.
+Hello, this is a test payload!  # Standard test payload
+RandomPayload1234  # Random string as payload
+Hello  # Hello in ASCII
+MaliciousPayload\x00\xFF\xFE  # Payload with null byte
+ExtremelyLongPayload_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  # Very long payload
