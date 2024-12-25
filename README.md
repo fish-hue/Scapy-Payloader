@@ -1,6 +1,6 @@
 ---
 
-# Scapy-Payloader a Packet Fuzzer Tool
+# Scapy-Payloader a Packet Fuzzer Tool and Payload Tester
 
 This Python-based Packet Fuzzer Tool is designed to help security researchers and developers test the robustness of network protocols. It allows users to generate and send fuzzed packets over the network to identify potential vulnerabilities in various protocols.
 
