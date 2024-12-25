@@ -13,13 +13,6 @@
     {"payload": "MaliciousPayload\x00\xFF\xFE", "description": "Payload with null byte and invalid chars"},
     {"payload": "ExtremelyLongPayload_" + "A".repeat(1000), "description": "Very long payload for buffer testing"}
   ],
-  "malicious_payloads": [
-    {"payload": "' OR '1'='1", "description": "SQL Injection attempt"},
-    {"payload": "<script>alert('XSS');</script>", "description": "Cross-site scripting attack"},
-    {"payload": "DROP TABLE users;", "description": "SQL drop command"},
-    {"payload": "AAAAAAAAAAAAAAAAAAAAAAAAA", "description": "Long string for brute force handling"},
-    {"payload": "random.data(); // Potential injection attack", "description": "General injection example"}
-  ],
   "icmp_payloads": [
     {"payload": "PingTestPayload", "description": "Standard ICMP echo request"},
     {"payload": "FuzzingPacketICMP", "description": "General packet for fuzzing"},
