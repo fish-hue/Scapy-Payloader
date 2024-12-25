@@ -1,0 +1,29 @@
+{
+  "dns_payloads": [
+    {"payload": "example.com", "description": "Valid domain"},
+    {"payload": "test.example.org", "description": "Another valid domain"},
+    {"payload": "invalid-domain#", "description": "Invalid domain with special character"},
+    {"payload": "nonexistent.tld", "description": "Non-existent TLD domain"},
+    {"payload": "sub.sub.sub.example.com", "description": "Valid subdomain chain"}
+  ],
+  "udp_payloads": [
+    {"payload": "Hello, this is a test payload!", "description": "Standard test payload"},
+    {"payload": "RandomPayload1234", "description": "Random string as payload"},
+    {"payload": "\u0048\u0065\u006C\u006C\u006F", "description": "Hello in Unicode"},
+    {"payload": "MaliciousPayload\x00\xFF\xFE", "description": "Payload with null byte and invalid chars"},
+    {"payload": "ExtremelyLongPayload_" + "A".repeat(1000), "description": "Very long payload for buffer testing"}
+  ],
+  "malicious_payloads": [
+    {"payload": "' OR '1'='1", "description": "SQL Injection attempt"},
+    {"payload": "<script>alert('XSS');</script>", "description": "Cross-site scripting attack"},
+    {"payload": "DROP TABLE users;", "description": "SQL drop command"},
+    {"payload": "AAAAAAAAAAAAAAAAAAAAAAAAA", "description": "Long string for brute force handling"},
+    {"payload": "random.data(); // Potential injection attack", "description": "General injection example"}
+  ],
+  "icmp_payloads": [
+    {"payload": "PingTestPayload", "description": "Standard ICMP echo request"},
+    {"payload": "FuzzingPacketICMP", "description": "General packet for fuzzing"},
+    {"payload": "\x00\x01\x02\x03\xFF\xFE", "description": "Special byte sequence"},
+    {"payload": "ICMPLargePayload_" + "B".repeat(500), "description": "Large ICMP payload for testing limits"}
+  ]
+}
