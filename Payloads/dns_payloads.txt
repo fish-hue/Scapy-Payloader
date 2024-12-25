@@ -1,0 +1,7 @@
+# Example DNS Payloads
+# Format: valid domains, invalid domains
+example.com  # Valid domain
+test.example.org  # Another valid domain
+invalid-domain#  # Invalid domain with special character
+nonexistent.tld  # Non-existent TLD domain
+sub.sub.sub.example.com  # Valid subdomain chain
