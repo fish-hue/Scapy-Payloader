@@ -1,4 +1,4 @@
-# UDP Payloads
+# Example UDP Payloads
 # Format: standard, malicious, long, etc.
 Hello, this is a test payload!  # Standard test payload
 RandomPayload1234  # Random string as payload
