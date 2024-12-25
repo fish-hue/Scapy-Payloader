@@ -36,14 +36,32 @@ def set_placeholder(event):
         event.widget.insert(0, event.widget.placeholder)
         event.widget.config(fg='grey')
 
-# Function to read content from a file
-def load_payload_from_file():
+# Function to read content from a text file
+def load_payload_from_text_file():
     filepath = filedialog.askopenfilename(title="Select a Payload File", filetypes=(("Text Files", "*.txt"), ("All Files", "*.*")))
     if filepath:
         with open(filepath, 'r') as file:
             payload = file.read()  # Read the content of the file
             payload_entry.delete(0, tk.END)  # Clear the existing entry
             payload_entry.insert(0, payload)  # Insert the file content into the entry
+
+# Function to read content from a JSON file
+def load_payload_from_json_file():
+    filepath = filedialog.askopenfilename(
+        title="Select a Payload File", 
+        filetypes=(("JSON Files", "*.json"), ("All Files", "*.*"))
+    )
+    if filepath:
+        try:
+            import json
+            with open(filepath, 'r') as file:
+                payloads = json.load(file)  # Parse JSON file
+                # Example: Load the first DNS payload
+                payload = payloads['dns_payloads'][0] if 'dns_payloads' in payloads else ""
+                payload_entry.delete(0, tk.END)  # Clear existing entry
+                payload_entry.insert(0, payload)  # Insert the payload
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to load payload: {e}")
 
 # Main application window setup
 root = tk.Tk()
@@ -63,9 +81,12 @@ src_ip_entry = create_entry_with_placeholder(root, "Source IP (for custom packet
 src_port_entry = create_entry_with_placeholder(root, "Source Port (for custom packets):", "12345")
 payload_entry = create_entry_with_placeholder(root, "Custom Payload (or leave blank for random):", "example.com")
 
-# Button to load payload from file
-load_payload_button = tk.Button(root, text="Load Payload from File", command=load_payload_from_file)
-load_payload_button.pack(pady=5)
+# Buttons to load payload from files
+load_text_payload_button = tk.Button(root, text="Load Text Payload from File", command=load_payload_from_text_file)
+load_text_payload_button.pack(pady=5)
+
+load_json_payload_button = tk.Button(root, text="Load JSON Payload from File", command=load_payload_from_json_file)
+load_json_payload_button.pack(pady=5)
 
 packet_type = tk.StringVar()
 packet_type.set("SYN Packet")  # Default selection
